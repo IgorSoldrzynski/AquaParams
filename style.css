@@ -63,19 +63,49 @@ header h1 {
 	padding: 20px 15px 15px 15px;
 	background-color: #93A3B1;
 }
-
+#center p {
+	clear: both;
+	padding: 20px 0 0 20px;
+	margin: 150px 0 0 0;
+}
 article {
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 4px;
 	border-color: #2A2D34;
-	width: 46%;
+	width: 480px;
 	margin: 15px;
 	float: left;
+	background-color: white;
 }
-.pp {
+article h2 {
+	border-bottom-color: #2A2D34;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	margin: 0;
+	padding-bottom: 2px;
+	text-align: center;
+	background-color: #2176AE;
+	color: white;
+	font-size: 130%;
+}
+article table {
+	text-align: left;
+	margin: 5px auto 10px auto;
+}
+article table tr th {
+	padding: 0 15px 0 0;
+	
+}
+article table tr td {
+	padding: 0 5px 0 0;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #2A2D34;
+
 }
 footer {
+	clear: both;
 	margin-top: 0;
 	padding: 1px 10px 1px 10px;
 	background-color: #2A2D34;
