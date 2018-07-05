@@ -6,15 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<header>
-		<h1>Strona do zapisu pomiarów parametrów wody</h1>
-		<ul id="navBar">
-			<li><a class="active" href="#">Start</a></li>
-			<li><a href="#">Dodaj pomiar</a></li>
-			<li><a href="#">Kalkulator</a></li>
-			<li id="right"><a href="#">Witaj, User! Wyloguj</a></li>
-		</ul>
-	</header>
+<?php
+	$page = $_GET['p'];
+	include 'header.php'; 
+?>
 	<div id="center">
 		<article>
 			<h2>Pomiar parametrów</h2>
@@ -99,9 +94,6 @@
 
 	
 	</div>
-	<footer>
-		<p>Projekt zaliczeniowy przedmiotu <i>Programowanie w internecie</i></p>
-		<p>Igor Sołdrzyński, 2018r.</p>
-	</footer>
+	<?php include 'footer.php'; ?>
 </body>
 </html>
