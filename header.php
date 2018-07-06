@@ -27,7 +27,7 @@ echo '
     <li><a '. $listart .' href="index.php">Start</a></li>
     <li><a '. $lidodaj .' href="?p=dodaj">Dodaj pomiar</a></li>
     <li><a '. $likalkulator .' href="?p=kalkulator">Kalkulator</a></li>
-    <li id="right"><a href="#">Witaj, User! Wyloguj</a></li>
+    <li id="right"><a href="#">Zaloguj / Witaj, User! Wyloguj</a></li>
 </ul>
 </header>
 ';
