@@ -32,11 +32,8 @@ switch($_GET['sort']){
 		break;
 }
 
-
-
-
 //Utworzenie połączenia
-$conn = mysqli_connect("localhost", "root", "gruszka", "aquaparams_users");
+$conn = mysqli_connect($serwer, $serwerUser, $serwerPswd, $bazaDanych);
 
 //Sprawdzenie czy połączono
 if (!$conn) {

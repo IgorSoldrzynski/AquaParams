@@ -12,6 +12,14 @@
 </head>
 <body>
 <?php
+	//dane do łączenia z bazą:
+	$serwer = "sql2.freemysqlhosting.net";
+	$serwerUser = "sql2246509";
+	$serwerPswd = "hA8%kQ3!";
+	$bazaDanych ="***";
+
+
+
 	$page = $_GET['p'];
 	include 'header.php'; 
 ?>

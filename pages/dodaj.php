@@ -3,7 +3,7 @@
 if($_SESSION['zalogowany'] == 1) {
     if(isset($_POST['kh'])) {
         //Utworzenie połączenia
-        $conn = mysqli_connect("localhost", "root", "gruszka", "aquaparams_users");
+        $conn = mysqli_connect($serwer, $serwerUser, $serwerPswd, $bazaDanych);
         
         //Sprawdzenie czy połączono
         if (!$conn) {
