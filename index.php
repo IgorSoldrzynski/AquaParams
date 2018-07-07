@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,12 @@
 		}
 		elseif ($page == "kalkulator") {
 			include 'pages/kalkulator.php';
+		}
+		elseif ($page == "zaloguj") {
+			include 'pages/zaloguj.php';
+		}
+		elseif ($page == "wyloguj") {
+			include 'pages/wyloguj.php';
 		}
 		else {
 			include 'pages/main.php';

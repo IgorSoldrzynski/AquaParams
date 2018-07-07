@@ -20,14 +20,20 @@ switch($page) {
         $likalkulator = "";
         break;
 }
+if($_SESSION['zalogowany']){
+    $lizaloguj = '<li id="right"><a href="?p=wyloguj">Witaj, '. $_SESSION['login'] .'! Wyloguj</a></li>';
+}
+else {
+    $lizaloguj = '<li id="right"><a href="?p=zaloguj">Zaloguj</a></li>';
+}
 echo '
 <header>
-<h1>Strona do zapisu pomiarów parametrów wody</h1>
+<h1>AquaParams<br />Strona do zapisu pomiarów parametrów wody</h1>
 <ul id="navBar">
     <li><a '. $listart .' href="index.php">Start</a></li>
     <li><a '. $lidodaj .' href="?p=dodaj">Dodaj pomiar</a></li>
     <li><a '. $likalkulator .' href="?p=kalkulator">Kalkulator</a></li>
-    <li id="right"><a href="#">Zaloguj / Witaj, User! Wyloguj</a></li>
+    '. $lizaloguj .'
 </ul>
 </header>
 ';

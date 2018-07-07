@@ -10,13 +10,21 @@ header {
 	margin:48px 0 0 0; 
 	height: 200px;
 }
+
+@font-face {
+	/* Freewere font "Painting_With_Chocolate" 
+	downloaded from: 
+	http://www.fontspace.com/make-mooze/painting-with-chocolate */
+	font-family: 'Painting_With_Chocolate';
+	src: url('pages/images/Painting_With_Chocolate.ttf');
+}
 header h1 {
 	color: white;
 	float: right;
 	text-align: right;
-	padding: 10% 1% 0 0;
+	padding: 8% 1% 0 0;
 	width: 70%;
-	font-family: Georgia, serif;
+	font-family: "Painting_With_Chocolate", fantasy;
 	font-weight: bold;
 	font-style: italic;
 }
@@ -62,26 +70,29 @@ header h1 {
 #center {	
 	padding: 20px 15px 15px 15px;
 	background-color: #93A3B1;
+	text-align: center;
 }
 #center p {
 	clear: both;
 	padding: 20px 0 0 20px;
-	margin: 150px 0 0 0;
+	margin: 80px 0 0 0;
 }
 article {
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 4px;
 	border-color: #2A2D34;
-	width: 480px;
-	margin: 15px;
-	float: left;
+	width: 482px;
+	margin: 20px 2%;
+	/*float: left;*/
+	display: inline-block;
 	background-color: white;
 }
 article h2 {
 	border-bottom-color: #2A2D34;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
+	border-radius: 3px 3px 0 0;
 	margin: 0;
 	padding-bottom: 2px;
 	text-align: center;
@@ -103,6 +114,27 @@ article table tr td {
 	border-style: solid;
 	border-color: #2A2D34;
 
+}
+ul {
+	list-style-type: none;
+}
+
+fieldset {
+	font-size: 120%;
+	margin: 0 12%;	
+}
+fieldset form {
+	text-align: center;
+}
+fieldset label {
+	text-align: right;
+	display: inline-block;
+	width: 100px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+}
+fieldset input {
+	width: 130px;
 }
 footer {
 	clear: both;
