@@ -1,4 +1,39 @@
 <?php
+//wybór metody sortowania pomiarów
+echo '
+<form action="index.php" method="get">
+<select name="sort">
+	<option value="datedesc">Daty pomiaru malejąco</option>
+	<option value="dateasc">Daty pomiaru rosnąco</option>
+	<option value="iddesc">Kolejność wpisu malejąco</option>
+	<option value="idasc">Kolejność wpisu rosnąco</option>
+</select>
+<input type="submit" value="Sortuj" />
+</form>
+';
+
+//przygotowanie zmiennych do sql query
+switch($_GET['sort']){
+	case "dateasc":
+		$order = "`data`";
+		$seq = "asc";
+		break;
+	case "iddesc":
+		$order = "`id`";
+		$seq = "desc";
+		break;
+	case "idasc":
+		$order = "`id`";
+		$seq = "asc";
+		break;
+	default:
+		$order = "`data`";
+		$seq = "desc";
+		break;
+}
+
+
+
 
 //Utworzenie połączenia
 $conn = mysqli_connect("localhost", "root", "gruszka", "aquaparams_users");
@@ -14,14 +49,15 @@ $wiersze = mysqli_fetch_row($selectCountRows);
 $liczbaRekordow = $wiersze[0];
 
 
-//w tym slekcie niżej można sortować//////////////////////////////////////////
-for($id=1; $id<=$liczbaRekordow; $id++){
-	$selectPomiar = mysqli_query($conn, "SELECT * from `params` where `id` = '$id'");
+for($i=0; $i<$liczbaRekordow; $i++){
+	$selectPomiar = mysqli_query($conn, "SELECT * from `params` order by ".$order." ".$seq." limit ".$i.",1");
 	$pomiar = mysqli_fetch_array($selectPomiar);
-	
+	//ustawienie lokalizacji, aby nazwy miesięcy były po polsku
+	setlocale(LC_TIME, 'pl_PL', 'pl_PL.utf8', 'pl', 'Polish_Poland.28592');
+	//wyświetlenie okienka pomiaru
 	echo'
 	<article>
-	<h2>Pomiar parametrów</h2>
+	<h2>Pomiar parametrów <i>&nbsp;&nbsp;&nbsp;'.strftime('%B %y', strtotime($pomiar['data'])).'r.</i></h2>
 	<table>
 	<tr>
 	<th>Data:</th><th>Zasolenie:</th><th>PH:</th><th>KH:</th><th>Ca:</th><th>Mg:</th><th>NO3:</th><th>PO4:</th>				
@@ -34,6 +70,7 @@ for($id=1; $id<=$liczbaRekordow; $id++){
 	</article>';
 }
 
+//koniec połączenia z bazą
 mysqli_close($conn);
 
 echo '
