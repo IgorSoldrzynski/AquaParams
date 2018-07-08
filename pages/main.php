@@ -45,7 +45,6 @@ $selectCountRows = mysqli_query($conn, "SELECT count(*) FROM `params`");
 $wiersze = mysqli_fetch_row($selectCountRows);
 $liczbaRekordow = $wiersze[0];
 
-
 for($i=0; $i<$liczbaRekordow; $i++){
 	$selectPomiar = mysqli_query($conn, "SELECT * from `params` order by ".$order." ".$seq." limit ".$i.",1");
 	$pomiar = mysqli_fetch_array($selectPomiar);
