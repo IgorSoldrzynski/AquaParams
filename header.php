@@ -2,15 +2,24 @@
 $listart = "";
 $lidodaj = "";
 $likalkulator = "";
+$lizalogujActive = "";
 $active = 'class="active"';
 switch($page) {
     case "kalkulator":
         $likalkulator = $active;
         $listart = "";
         $lidodaj = "";
+        $lizalogujActive = "";
         break;
     case "dodaj":
         $lidodaj = $active;
+        $listart = "";
+        $likalkulator = "";
+        $lizalogujActive = "";
+        break;
+    case "zaloguj":
+        $lizalogujActive = $active;
+        $lidodaj = "";
         $listart = "";
         $likalkulator = "";
         break;
@@ -18,13 +27,14 @@ switch($page) {
         $listart = $active;
         $lidodaj = "";
         $likalkulator = "";
+        $lizalogujActive = "";
         break;
 }
 if($_SESSION['zalogowany']){
     $lizaloguj = '<li id="right"><a href="?p=wyloguj">Witaj, '. $_SESSION['login'] .'! Wyloguj</a></li>';
 }
 else {
-    $lizaloguj = '<li id="right"><a href="?p=zaloguj">Zaloguj</a></li>';
+    $lizaloguj = '<li id="right"><a '.$lizalogujActive.' href="?p=zaloguj">Zaloguj</a></li>';
 }
 echo '
 <header>
