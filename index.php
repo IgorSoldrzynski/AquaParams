@@ -15,8 +15,8 @@
 	//dane do łączenia z bazą:
 	$serwer = "sql2.freemysqlhosting.net";
 	$serwerUser = "sql2246509";
-	$serwerPswd = "hA8%kQ3!";
-	$bazaDanych ="***";
+	$serwerPswd = "***";
+	$bazaDanych ="sql2246509";
 
 
 
