@@ -124,6 +124,9 @@ fieldset {
 	font-size: 120%;
 	margin: 0 12%;	
 }
+fieldset legend {
+	text-align: left;
+}
 fieldset form {
 	text-align: center;
 }
